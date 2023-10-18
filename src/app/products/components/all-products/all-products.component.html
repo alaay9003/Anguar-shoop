@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="m-5 w-25">
+    <app-select [items]="Categories" [title]="'All categories'"></app-select>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-12" *ngFor="let item of products">
+      <div class="card mt-5" style="height: 450px; width: 300px">
+        <div class="card-img-container d-flex justify-content-center">
+          <img
+            class="img-fluid"
+            src="{{ item.image }}"
+            alt="Card image cap"
+            style="width: 150px; height: 200px"
+          />
+        </div>
+        <div class="card-body" style="overflow: hidden">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text" style="overflow: hidden; max-height: 60px">
+            {{ item.description }}
+          </p>
+          <a href="#" class="btn btn-primary">Add To Cart</a>
+          <p>{{ item.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
