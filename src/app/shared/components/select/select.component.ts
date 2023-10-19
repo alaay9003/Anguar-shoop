@@ -10,6 +10,7 @@ export class SelectComponent {
   @Input() items: any[] = [];
   @Output() selectedValue = new EventEmitter();
   constructor() {}
+
   getByCategory(event: any) {
     this.selectedValue.emit(event);
   }

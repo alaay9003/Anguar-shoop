@@ -9,6 +9,7 @@ import { ProductsService } from '../../services/products.service';
 export class AllProductsComponent implements OnInit {
   public products: any[] = [];
   Categories: any[] = [];
+  cartProducts: any[] = [];
   constructor(private service: ProductsService) {}
   ngOnInit(): void {
     this.getProducts();
@@ -53,5 +54,22 @@ export class AllProductsComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  public addToCart(event: any) {
+    //console.log(event);
+    if ('cart' in localStorage) {
+      this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
+      let exist = this.cartProducts.find((item) => item.id == event.id);
+      if (exist) {
+        alert('item is already inserted');
+      } else {
+        this.cartProducts.push(event);
+        localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+      }
+    } else {
+      this.cartProducts.push(event);
+      localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    }
   }
 }
