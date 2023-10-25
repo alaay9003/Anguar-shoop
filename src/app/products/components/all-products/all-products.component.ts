@@ -14,6 +14,7 @@ export class AllProductsComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
     this.getAllCategory();
+    console.log(this.products);
   }
 
   getProducts() {
@@ -60,7 +61,9 @@ export class AllProductsComponent implements OnInit {
     //console.log(event);
     if ('cart' in localStorage) {
       this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
-      let exist = this.cartProducts.find((item) => item.id == event.id);
+      let exist = this.cartProducts.find(
+        (item) => item.item.id == event.item.id
+      );
       if (exist) {
         alert('item is already inserted');
       } else {

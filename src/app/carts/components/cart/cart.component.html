@@ -1,1 +1,78 @@
-<p>cart works!</p>
+<div class="cart-box">
+  <div class="head">
+    <h2>Shooping Cart</h2>
+    <p>
+      you have <span>{{ cartProducts.length }}</span> items in your Cart
+    </p>
+    <button class="btn btn-danger" (click)="clearCartProducts()">
+      Clear Shooping Cart
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartProducts">
+        <td style="padding-top: 0 !important">
+          <img
+            src="{{ item.item.image }}"
+            style="width: 50px; height: 75px"
+            class="ms-2"
+          />
+        </td>
+        <td style="max-width: 200px; overflow: hidden">
+          {{ item.item.title }}
+        </td>
+        <td>{{ item.item.price }} L.E</td>
+        <td>
+          <input
+            type="number"
+            style="width: 80px"
+            min="1"
+            (change)="setCartQuantity()"
+            [(ngModel)]="item.quantity"
+          />
+        </td>
+        <td>{{ item.quantity * item.item.price | number : "1.0-2" }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteCartItem(item.item.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-end me-5">
+    <p class="m-2 fw-bold">
+      Total : <span>{{ total | number : "1.2-2" }} L.E</span>
+    </p>
+    <button class="btn btn-dark ms-3" (click)="addCart()">Order Now</button>
+  </div>
+  <div
+    class="toast align-items-center text-white bg-primary border-0"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="d-flex">
+      <div class="toast-body">Hello, world! This is a toast message.</div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  <div class="alert alert-success mt-4" role="alert" *ngIf="success">
+    <strong>Well Done</strong> your order is successfully send
+  </div>
+</div>

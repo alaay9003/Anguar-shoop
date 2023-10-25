@@ -5,9 +5,14 @@ import { ProductsDetailsComponent } from './components/products-details/products
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
 import { ProductComponent } from './components/product/product.component';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
-  declarations: [AllProductsComponent, ProductsDetailsComponent, ProductComponent],
-  imports: [CommonModule, BrowserModule, SharedModule],
+  declarations: [
+    AllProductsComponent,
+    ProductsDetailsComponent,
+    ProductComponent,
+  ],
+  imports: [CommonModule, BrowserModule, SharedModule, RouterLink],
 })
 export class ProductsModule {}

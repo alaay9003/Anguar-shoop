@@ -1,1 +1,26 @@
-<p>products-details works!</p>
+<div class="container d-flex">
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <img [src]="product.image" alt="sass" />
+    </div>
+
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <ul class="list-unstyled">
+          <li class="m-3"><strong>Title : </strong>{{ product.title }}</li>
+          <li class="m-3">
+            <strong>Discription : </strong>{{ product.description }}
+          </li>
+          <li class="m-3">
+            <strong>Category : </strong>{{ product.category }}
+          </li>
+          <li class="m-3"><strong>Rate : </strong>{{ product.rating.rate }}</li>
+          <li class="m-3">
+            <strong>Count : </strong>{{ product.rating.count }}
+          </li>
+          <li class="m-3"><strong>Price : </strong>{{ product.price }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

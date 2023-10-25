@@ -8,6 +8,8 @@ import { Routes } from '@angular/router';
 import { AllProductsComponent } from './products/components/all-products/all-products.component';
 import { CommonModule } from '@angular/common';
 import { ProductsModule } from './products/products.module';
+import { CartComponent } from './carts/components/cart/cart.component';
+import { CartsModule } from './carts/carts.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,7 @@ import { ProductsModule } from './products/products.module';
     SharedModule,
     CommonModule,
     ProductsModule,
+    CartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

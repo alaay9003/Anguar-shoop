@@ -1,0 +1,23 @@
+.cart-box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  //border: 1px solid rgb(185, 184, 184);
+  margin: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  table {
+    text-align: center;
+    td {
+      padding-top: 30px;
+    }
+  }
+  .head {
+    margin: 20px;
+    h2 {
+      color: rgb(213, 8, 8);
+      font-weight: bold;
+    }
+    span {
+      color: rgb(213, 8, 8);
+    }
+  }
+}

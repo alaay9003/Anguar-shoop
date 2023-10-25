@@ -1,0 +1,26 @@
+nav {
+  background-color: var(--primary-color);
+  color: white;
+  .brand {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+  }
+}
+
+.item {
+  display: flex;
+  ul {
+    list-style: none;
+    display: flex;
+    margin-left: 0;
+    margin-left: auto;
+    margin-top: 5px;
+    li {
+      font-weight: 20px;
+      margin-left: 20px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+  }
+}
